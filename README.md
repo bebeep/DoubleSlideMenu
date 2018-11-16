@@ -6,7 +6,6 @@
 
 <img src="https://github.com/bebeep/DoubleSlideMenu/blob/master/screenshots/screenshots.gif" width="300"></img>
 
-![Image text](https://github.com/bebeep/DoubleSlideMenu/blob/master/screenshots/screenshots.gif)
 
 使用方法：
 
