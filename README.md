@@ -4,4 +4,22 @@
 在捣鼓了一阵之后，发现只要少许的改动即可实现需求，效果如下：
 
 ![Image text](https://github.com/bebeep/DoubleSlideMenu/blob/master/screenshots/screenshots.gif)
+
+使用方法：
+方法1、jitpack大法：
+第一步，先在工程的主build.gradle添加如下配置：
+
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+      
+第二步，在app的build.gradle中添加一下依赖：
+dependencies {
+	        implementation 'com.github.bebeep:DoubleSlideMenu:Tag'
+	}
+      
+方法2、直接下载本项目，然后将依赖slidemenu引入自己的项目中。
       
