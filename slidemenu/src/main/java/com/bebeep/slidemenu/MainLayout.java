@@ -33,6 +33,7 @@ public class MainLayout extends FrameLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
+
         if(mySlideMenu !=null && mySlideMenu.getDragState() == DoubleSlideMenu.DragState.STATE_OPEN){
             //如果该侧滑面板是打开，则拦截消费触摸事件
             return true;
