@@ -10,7 +10,7 @@ https://blog.csdn.net/qq_30948129/article/details/52282451
 <img src="https://github.com/bebeep/DoubleSlideMenu/blob/master/screenshots/screenshots.gif" width="300"></img>
 
 
-![]使用示例：
+使用示例：
 
 布局使用：
 切记，无论是左侧滑出还是右侧滑出，菜单布局一定要放在前面，如下所示:
