@@ -6,7 +6,9 @@
 ![Image text](https://github.com/bebeep/DoubleSlideMenu/blob/master/screenshots/screenshots.gif)
 
 使用方法：
+
 方法1、jitpack大法：
+
 第一步，先在工程的主build.gradle添加如下配置：
 
 ```Java
@@ -17,6 +19,7 @@ allprojects {
 	}
 }
 ```      
+
 第二步，在app的build.gradle中添加一下依赖：
 ```java
 dependencies {
