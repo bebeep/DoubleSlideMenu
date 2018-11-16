@@ -28,7 +28,7 @@ allprojects {
 第二步，在app的build.gradle中添加一下依赖：
 ```java
 dependencies {
-        implementation 'com.github.bebeep:DoubleSlideMenu:Tag'
+        implementation 'com.github.bebeep:DoubleSlideMenu:v1.0'
 }
 ```
       
