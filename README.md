@@ -9,13 +9,14 @@
 方法1、jitpack大法：
 第一步，先在工程的主build.gradle添加如下配置：
 
+```Java
 allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
-      
+```      
 第二步，在app的build.gradle中添加一下依赖：
 dependencies {
 	        implementation 'com.github.bebeep:DoubleSlideMenu:Tag'
