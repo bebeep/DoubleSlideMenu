@@ -1,9 +1,12 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 28
 
 
+    resourcePrefix "bebeep_" //资源标识前缀
 
     defaultConfig {
         minSdkVersion 15
@@ -30,3 +33,111 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.nineoldandroids:library:2.4.0'
 }
+
+
+
+
+
+def siteUrl = 'https://github.com/bebeep/DoubleSlideMenu'   // 项目的主页 github地址
+def gitUrl = 'git@github.com:bebeep/DoubleSlideMenu.git'   // Git仓库的url
+def libName = "DoubleSlideMenu"
+group = "com.bebeep.slidemenu"            // Maven Group ID for the artifact，一般填你唯一的包名
+version = "1.0"// 区分library版本
+
+
+
+//生成源文件
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+//生成Javadoc文档
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+//文档打包成jar
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+//拷贝javadoc文件
+task copyDoc(type: Copy) {
+    from "${buildDir}/docs/"
+    into "docs"
+}
+
+
+//上传到JCenter所需要的源码文件
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                //项目的描述
+                name 'DoubleSlideMenu'
+                url siteUrl
+                // 许可证说明
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    //开发者的基本信息，根据自己喜好填上就是
+                    developer {
+                        id 'bebeep'
+                        name 'bebeep'
+                        email '424468648@qq.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+javadoc {
+    options{
+        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        name = "DoubleSlideMenu"    //发布到JCenter上的项目名字
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+}
+
+
+
+

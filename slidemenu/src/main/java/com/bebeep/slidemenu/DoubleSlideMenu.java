@@ -188,19 +188,19 @@ public class DoubleSlideMenu extends FrameLayout {
                 ViewHelper.setAlpha(mainMenu,floatEvaluator.evaluate(fraction,1f,0.3f));
                 if(fraction ==0 && currentState!= DragState.STATE_CLOSE){
                     currentState = DragState.STATE_CLOSE;
-                    listener.onClose();
+                    if(listener!=null)listener.onClose();
                 }else if(fraction==1 && currentState!= DragState.STATE_OPEN){
                     currentState = DragState.STATE_OPEN;
-                    listener.onOpen();
+                    if(listener!=null)listener.onOpen();
                 }
             }else if(menulocation == DragState.RIGHT){
                 ViewHelper.setAlpha(mainMenu,floatEvaluator.evaluate(-fraction,1f,0.3f));
                 if(fraction == 0 && currentState!= DragState.STATE_CLOSE){
                     currentState = DragState.STATE_CLOSE;
-                    listener.onClose();
+                    if(listener!=null)listener.onClose();
                 }else if(fraction== -1 && currentState!= DragState.STATE_OPEN){
                     currentState = DragState.STATE_OPEN;
-                    listener.onOpen();
+                    if(listener!=null)listener.onOpen();
                 }
             }
 
