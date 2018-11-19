@@ -13,6 +13,7 @@ https://blog.csdn.net/qq_30948129/article/details/52282451
 使用示例：
 
 布局使用：
+mainLayout要设置背景颜色或者填充满布局，不然在首次加载布局时会显示菜单布局。
 切记，无论是左侧滑出还是右侧滑出，菜单布局一定要放在前面，如下所示:
 ```java
  <com.bebeep.slidemenu.DoubleSlideMenu
