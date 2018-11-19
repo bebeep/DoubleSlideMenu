@@ -39,7 +39,7 @@ dependencies {
 
 
 def siteUrl = 'https://github.com/bebeep/DoubleSlideMenu'   // 项目的主页 github地址
-def gitUrl = 'git@github.com:bebeep/DoubleSlideMenu.git'   // Git仓库的url
+def gitUrl = 'https://github.com/bebeep/DoubleSlideMenu.git'   // Git仓库的url
 def libName = "DoubleSlideMenu"
 group = "com.bebeep.slidemenu"            // Maven Group ID for the artifact，一般填你唯一的包名
 version = "1.2"// 区分library版本
