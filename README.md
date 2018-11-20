@@ -77,6 +77,7 @@ binding.msmParent.setOnDragstateChangeListener(new DoubleSlideMenu.onDragStateCh
 });        
 ```
 如何引入到项目中：
+
 方法一（推荐）、直接在app的build.gradle中添加：
 ```java
 dependencies {
