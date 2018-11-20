@@ -77,8 +77,15 @@ binding.msmParent.setOnDragstateChangeListener(new DoubleSlideMenu.onDragStateCh
 });        
 ```
 如何引入到项目中：
+方法一（推荐）、直接在app的build.gradle中添加：
+```java
+dependencies {
+     ···
+     implementation 'com.bebeep.slidemenu:slidemenu:1.2'
+}
+```
 
-方法一、jitpack大法：
+方法二、jitpack大法：
 
 第1步，先在工程的主build.gradle添加如下配置：
 
@@ -98,7 +105,7 @@ dependencies {
 }
 ```
       
-方法二、直接下载本项目，然后将依赖slidemenu引入自己的项目中。
+方法三、直接下载本项目，然后将依赖slidemenu引入自己的项目中。
 
 
       
